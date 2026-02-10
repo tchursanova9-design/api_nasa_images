@@ -63,6 +63,7 @@ def main() -> None:
                 image_bytes=image_bytes,
             )
 
+
             consumer.commit()
 
             if inserted:
