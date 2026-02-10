@@ -1,0 +1,22 @@
+cat > .gitignore <<'EOF'
+# OS
+.DS_Store
+
+# Env
+.env
+.env.*
+docker/.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# IDE
+.idea/
+.vscode/
+
+# Logs
+*.log
+EOF
