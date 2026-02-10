@@ -76,7 +76,7 @@ services:
 
   # --- Your app ---
   producer:
-    build: ../PyCharmMiscProject
+    build: ../app
     command: ["python", "-u", "main.py"]
     environment:
       - QUERY=${QUERY:-}
@@ -91,7 +91,7 @@ services:
     restart: unless-stopped
 
   consumer:
-    build: ../PyCharmMiscProject
+    build: ../app
     command: ["python", "-u", "consumer.py"]
     environment:
       - KAFKA_BOOTSTRAP=kafka:9092
@@ -120,6 +120,7 @@ services:
     environment:
       KAFKA_CLUSTERS_0_NAME: local
       KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:9092
+    restart: unless-stopped
 
 
 volumes:
