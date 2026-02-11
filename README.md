@@ -87,11 +87,13 @@ Sentry
 
 Создай файл `docker/.env`:
 
-```env
+env
 SENTRY_DSN=
 ENVIRONMENT=local
 INTERVAL_SECONDS=30
 QUERY=
+
+
 Пояснения
 
 - SENTRY_DSN — DSN проекта Sentry (можно оставить пустым)
