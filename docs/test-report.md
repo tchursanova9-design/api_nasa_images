@@ -103,6 +103,8 @@ Stack: Kafka, Postgres, Sentry, ELK, Python
 
 Фактический результат:
 
+❗️ Failed 
+
 1. Producer выполняет серию попыток подключения:
 
 [Kafka] connecting to kafka:9092 (attempt 1..10)
@@ -126,10 +128,7 @@ Stack: Kafka, Postgres, Sentry, ELK, Python
 - повторной регистрации consumer в группе
 - выполнения rebalance
 
-Фактический результат: 
-
-❗️ Failed 
-
+Выводы по текущей реализации: 
 1. При выключенной Kafka producer выполняет частые повторные попытки подключения.
 В логах и Sentry может возникать большое количество одинаковых ошибок (шум).
 
