@@ -200,6 +200,7 @@ Stack: Kafka, Postgres, Sentry, ELK, Python
 if ev.nasa_id == "TEST_FAIL":
     raise RuntimeError("Forced error for offset test (TC-06)")
 "
+
 ⚠️ Важно: условие должно стоять до consumer.commit().
 
 2. Пересобрать и перезапустить consumer:
@@ -221,8 +222,9 @@ docker compose logs -f consumer
 docker exec -it docker-kafka-1 \
 kafka-consumer-groups --bootstrap-server kafka:9092 --describe --group images-writer
 
-1. Ожидаемый результат
-Consumer получает TEST_FAIL и падает/логирует ошибку до commit.
+Ожидаемый результат:
+
+1. Consumer получает TEST_FAIL и падает/логирует ошибку до commit.
 
 2. После перезапуска consumer читает тот же TEST_FAIL снова.
 
